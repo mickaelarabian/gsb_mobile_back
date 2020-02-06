@@ -26,3 +26,5 @@ use Illuminate\Http\Request;
 
 Route::get('/services/{id}', 'ServiceController@getService');
 Route::get('services/personnel/{id}', 'ServiceController@getAllFromPersonnel');
+
+Route::post('/depenses/create', 'DepenseController@create');
