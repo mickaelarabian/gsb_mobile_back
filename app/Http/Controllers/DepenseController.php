@@ -15,6 +15,7 @@ class DepenseController extends Controller
             'description' => $request->input('description'),
             'prix' => $request->input('prix'),
         ];
-        Depense::create($depense);
+        $depense = Depense::create($depense);
+        return Controller::responseJson(200, "La dépense a bien été saisie !", $depense);
     }
 }
