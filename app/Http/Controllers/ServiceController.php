@@ -11,8 +11,8 @@ class ServiceController extends Controller
 {
     public function getAllFromPersonnel($id)
     {
-        $services = User_Service::where('user_id', $id)->get();
-        //$services = Service::where('user_id', $id)->get();
+        $result = User_Service::select('service_id')->where('user_id', $id)->get();
+        $services = Service::WhereIn('id', $result)->get();
         return Controller::responseJson(200, "Les services ont été retournés", $services);
     }
 

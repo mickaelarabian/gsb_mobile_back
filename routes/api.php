@@ -13,18 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/users/login', 'AuthController@login');
 
-// Route::group(['prefix' => 'auth'], function () {
-//     Route::post('/login', 'AuthController@login');
-//     Route::post('/logout', 'AuthController@logout');
-// });
-
-// Route::group(['prefix' => 'services'], function () {
-//     //Route::get('/', 'ServiceController@getAllFromUser');
-//     Route::get('/show/{id}', 'ServiceController@getService');
-// });
-
-Route::get('/services/{id}', 'ServiceController@getService');
 Route::get('services/personnel/{id}', 'ServiceController@getAllFromPersonnel');
 
+Route::get('/services/{id}', 'ServiceController@getService');
+
 Route::post('/depenses/create', 'DepenseController@create');
+
+Route::post('/demandes/create', 'DemandeController@create');
